@@ -1,0 +1,56 @@
+[
+  {
+    "id": 3,
+    "name": "Baked Croissant",
+    "description": "freshly Baked Croissant with vegetable",
+    "category": "Snacks",
+    "price": 18,
+    "quantity": 2,
+    "sold": 0
+  },
+  {
+    "id": 4,
+    "name": "Chicken Wings",
+    "description": "spicy Chicken Wing",
+    "category": "Food",
+    "price": 35,
+    "quantity": 22,
+    "sold": 0
+  },
+  {
+    "id": 5,
+    "name": "Mocha Madness Latte",
+    "description": "freshly brewed hot coffee",
+    "category": "drinks",
+    "price": 25,
+    "quantity": 4,
+    "sold": 0
+  },
+  {
+    "id": 6,
+    "name": "Hot chocolate",
+    "description": "hot chocolate topped with cream",
+    "category": "beverage",
+    "price": 24,
+    "quantity": 11,
+    "sold": 0
+  },
+  {
+    "id": 7,
+    "name": "Milkshake",
+    "description": "Vanilla milkshake ",
+    "category": "beverage",
+    "price": 20,
+    "quantity": 4,
+    "sold": 0
+  },
+  {
+    "id": 8,
+    "name": "Cheese Cake Slice",
+    "description": "strawberry soft cheesecake slice",
+    "category": "beverage",
+    "price": 22,
+    "quantity": 7,
+    "sold": 0
+  }
+]

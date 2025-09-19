@@ -1,0 +1,90 @@
+.inventory-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color:#cc8663;
+}
+
+.inventory-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  background-color: #e6eee7;        
+  border-left: 5px solid ;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-card h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.inventory-card input,
+.inventory-card select,
+.inventory-card button {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.inventory-card button {
+  background-color:#527aa1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.inventory-card button:hover {
+  background-color: #c66767;;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.delete-button {
+  background-color: #e74c3c !important;
+}
+
+.delete-button:hover {
+  background-color: #c0392b !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.in-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.low-stock {
+  color: red;
+  font-weight: bold;
+}

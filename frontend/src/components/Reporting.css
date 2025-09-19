@@ -1,0 +1,75 @@
+.reporting-card {
+  background: rgba(216, 238, 230, 0.85); 
+  padding: 8px 13px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(204, 134, 99, 0.5);
+  overflow-x: auto; 
+}
+
+.reporting-card h3 {
+  margin-top: 0;
+  color: #145f4e;
+}
+
+.reporting-card table {
+  width: 100%;
+  min-width: 600px; 
+  border-collapse: collapse;
+  background: rgba(215, 237, 230, 0.85); 
+}
+
+.reporting-card th,
+.reporting-card td {
+  padding: 10px 15px;
+  text-align: left;
+  color: #145f4e;
+  font-weight: 600;
+  white-space: nowrap; 
+}
+
+.reporting-card th {
+  background-color: rgba(111, 221, 166, 0.85);
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.reporting-card tbody tr {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.reporting-card tbody tr:hover {
+  background: rgba(204, 134, 99, 0.2);
+}
+
+.reporting-card tbody tr td {
+  border-bottom: 1px solid rgba(152, 200, 154, 0.3);
+}
+
+.in-stock {
+  color: #2d7a2d;
+  font-weight: 700;
+}
+
+.low-stock {
+  color: #b93829;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+@media (max-width: 600px) {
+  .reporting-card table {
+    min-width: unset; 
+  }
+
+  .reporting-card th,
+  .reporting-card td {
+    padding: 4px 6px; 
+    font-size: 0.9rem; 
+  }
+}
