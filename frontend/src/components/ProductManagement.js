@@ -17,7 +17,7 @@ function ProductManagement() {
   }, []);
 
   const fetchProducts = () => {
-    axios.get('http://localhost:5000/api/products').then((res) => {
+    axios.get('https://wings-cafe-inventory-gluw.onrender.com/api/products').then((res) => {
       setProducts(res.data);
     });
   };
@@ -34,14 +34,14 @@ function ProductManagement() {
     e.preventDefault();
     if (editingId) {
       axios
-        .put(`http://localhost:5000/api/products/${editingId}`, form)
+        .put(`https://wings-cafe-inventory-gluw.onrender.com/api/products/${editingId}`, form)
         .then(() => {
           fetchProducts();
           resetForm();
         });
     } else {
       axios
-        .post('http://localhost:5000/api/products', form)
+        .post('https://wings-cafe-inventory-gluw.onrender.com/api/products', form)
         .then(() => {
           fetchProducts();
           resetForm();
@@ -67,13 +67,13 @@ function ProductManagement() {
 
   const deleteProduct = (id) => {
     axios
-      .delete(`http://localhost:5000/api/products/${id}`)
+      .delete(`https://wings-cafe-inventory-gluw.onrender.com/api/products/${id}`)
       .then(fetchProducts);
   };
 
   const sellProduct = (productId) => {
     axios
-      .post('http://localhost:5000/api/sell', {
+      .post('https://wings-cafe-inventory-gluw.onrender.com/api/sell', {
         sales: [{ id: productId, quantitySold: 1 }],
       })
       .then(() => fetchProducts())
