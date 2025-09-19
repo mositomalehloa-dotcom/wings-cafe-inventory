@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const BACKEND_BASE = 'https://wings-cafe-inventory-gluw.onrender.com';
+
 function ProductManagement() {
   const [products, setProducts] = useState([]);
   const [form, setForm] = useState({
@@ -17,7 +19,7 @@ function ProductManagement() {
   }, []);
 
   const fetchProducts = () => {
-    axios.get('https://wings-cafe-inventory-gluw.onrender.com/api/products').then((res) => {
+    axios.get(`${BACKEND_BASE}/api/products`).then((res) => {
       setProducts(res.data);
     });
   };
@@ -34,14 +36,14 @@ function ProductManagement() {
     e.preventDefault();
     if (editingId) {
       axios
-        .put(`https://wings-cafe-inventory-gluw.onrender.com/api/products/${editingId}`, form)
+        .put(`${BACKEND_BASE}/api/products/${editingId}`, form)
         .then(() => {
           fetchProducts();
           resetForm();
         });
     } else {
       axios
-        .post('https://wings-cafe-inventory-gluw.onrender.com/api/products', form)
+        .post(`${BACKEND_BASE}/api/products`, form)
         .then(() => {
           fetchProducts();
           resetForm();
@@ -66,14 +68,12 @@ function ProductManagement() {
   };
 
   const deleteProduct = (id) => {
-    axios
-      .delete(`https://wings-cafe-inventory-gluw.onrender.com/api/products/${id}`)
-      .then(fetchProducts);
+    axios.delete(`${BACKEND_BASE}/api/products/${id}`).then(fetchProducts);
   };
 
   const sellProduct = (productId) => {
     axios
-      .post('https://wings-cafe-inventory-gluw.onrender.com/api/sell', {
+      .post(`${BACKEND_BASE}/api/sell`, {
         sales: [{ id: productId, quantitySold: 1 }],
       })
       .then(() => fetchProducts())
