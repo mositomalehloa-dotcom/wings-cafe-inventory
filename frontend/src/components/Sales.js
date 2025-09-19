@@ -33,7 +33,7 @@ const Sales = () => {
 
     const updated = { ...product, quantity: product.quantity - qty };
 
-    fetch(`http://localhost:5000/api/products/${product.id}`, {
+    fetch(`https://wings-cafe-inventory-gluw.onrender.com/api/products/${product.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updated)
