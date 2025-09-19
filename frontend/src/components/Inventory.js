@@ -13,7 +13,7 @@ const Inventory = () => {
   const [editProduct, setEditProduct] = useState(null);
   const [transaction, setTransaction] = useState({ productId: '', quantity: '' });
 
-  const BACKEND_BASE = process.env.REACT_APP_BACKEND_URL || 'https://wings-cafe-inventory-gluw.onrender.com';
+  const BACKEND_BASE = 'https://wings-cafe-inventory-gluw.onrender.com';
 
   // fetch all products initially
   useEffect(() => {
