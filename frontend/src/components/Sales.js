@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './Sales.css';
-import './Sales.css';
 import { ProductContext } from '../ProductContext'; 
+
+const BACKEND_BASE = 'https://wings-cafe-inventory-gluw.onrender.com';
 
 const Sales = () => {
   const { products, updateProduct } = useContext(ProductContext); 
@@ -12,7 +13,6 @@ const Sales = () => {
   const [receipt, setReceipt] = useState(null);
 
   useEffect(() => {
-
     const initial = {};
     products.forEach(p => {
       initial[p.id] = p.quantity;
@@ -33,7 +33,7 @@ const Sales = () => {
 
     const updated = { ...product, quantity: product.quantity - qty };
 
-    fetch(`https://wings-cafe-inventory-gluw.onrender.com/api/products/${product.id}`, {
+    fetch(`${BACKEND_BASE}/api/products/${product.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updated)
