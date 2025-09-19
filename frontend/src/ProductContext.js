@@ -7,8 +7,10 @@ export const ProductProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const BACKEND_BASE = 'https://wings-cafe-inventory-gluw.onrender.com';
+
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch(`${BACKEND_BASE}/api/products`)
       .then(res => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.json();
@@ -35,7 +37,9 @@ export const ProductProvider = ({ children }) => {
   };
 
   const updateProduct = (updatedProduct) => {
-    setProducts(prev => prev.map(p => (p.id === updatedProduct.id ? updatedProduct : p)));
+    setProducts(prev =>
+      prev.map(p => (p.id === updatedProduct.id ? updatedProduct : p))
+    );
   };
 
   const deleteProduct = (productId) => {
