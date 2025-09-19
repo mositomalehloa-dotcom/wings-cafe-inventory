@@ -9,7 +9,18 @@ const PORT = 5000;
 const PRODUCTS_FILE = path.join(__dirname, 'data', 'products.json');
 // customers file etc unchanged
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+// ✅ CORS now allows both local and deployed frontend
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'https://wings-cafe-inventory-gluw.onrender.com',
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 const getNewId = (items) =>
